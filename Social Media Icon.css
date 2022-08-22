@@ -1,0 +1,40 @@
+*{
+    font-family: 'Lobster', cursive;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-align: center;
+}
+:root{
+    --mainColor:#333333;
+    --containerColor:#fff;
+    --faceColor:#4267B2;
+    --instaColor:#833AB4;
+    --tubeColor:#FF0000;
+    --twitColor:#1DA1F2;
+    
+}
+body{
+    background-color: var(--containerColor);
+}
+h1 {
+    color: aqua;
+}
+.container{
+    width: 80%;
+    /* height: 100vh; */
+    border-radius: 8px;
+    background-color: var(--mainColor);
+    margin: auto;
+}
+.social{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100px;
+}
+.social li i{
+    align-content: center;
+
+}
