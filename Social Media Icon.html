@@ -17,24 +17,31 @@
     />
   </head>
   <body>
-    <h1 class="title">Social Media Icon <sub>Hover Effects</sub></h1>
+    <h1 id="title">Social Media Icon <sub>Hover Effects</sub></h1>
     <div class="container">
-      <div class="social">
-        <li class="item">
-          <i class="fa fa-youtube-play fa-4x" aria-hidden="true"></i>
+      <ul class="social">
+        <li class="item" data-text="facebook">
+          <a href="#" class="face"><i class="fa fa-facebook-official fa-4x" aria-hidden="true"></i></a>
         </li>
-        <li class="item">
-          <i class="fa fa-facebook-official fa-4x" aria-hidden="true"></i>
+        <li class="item" data-text="youtube">
+          <a href="#" class="tube"><i class="fa fa-youtube-play fa-4x" aria-hidden="true"></i></a>
         </li>
-        <li class="item">
-          <i class="fa fa-twitter-square fa-4x" aria-hidden="true"></i>
+        <li class="item" data-text="twitter">
+          <a href="#" class="twit"><i class="fa fa-twitter-square fa-4x" aria-hidden="true"></i></a>
         </li>
-        <li class="item">
-          <i class="fa fa-instagram fa-4x" aria-hidden="true"></i>
+        <li class="item" data-text="instagram">
+          <a href="#" class="insta"><i class="fa fa-instagram fa-4x" aria-hidden="true"></i></a>
         </li>
-      </div>
+      </ul>
     </div>
-
-    <script src="/Social Media Icon.js"></script>
+    <script>
+      VanillaTilt.init(document.querySelectorAll(".social li a"), {
+        max: 30,
+        speed: 400
+      });
+      document.getElementById("title").innerText= "hello js";
+      </script>
+      <script src="vanilla-tilt.min.js"></script>
+    <!-- <script src="/Social Media Icon.js"></script> -->
   </body>
 </html>

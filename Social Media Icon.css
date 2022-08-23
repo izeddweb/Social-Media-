@@ -4,37 +4,85 @@
     padding: 0;
     box-sizing: border-box;
     list-style: none;
+    text-decoration: none;
     text-align: center;
 }
 :root{
     --mainColor:#333333;
-    --containerColor:#fff;
+    --containerColor:rgb(195, 238, 240);
+    --blankColor:rgb(255, 255, 255);
     --faceColor:#4267B2;
     --instaColor:#833AB4;
     --tubeColor:#FF0000;
     --twitColor:#1DA1F2;
-    
 }
 body{
-    background-color: var(--containerColor);
+    perspective: 1000px;
+    background-color: var(--blankColor);
 }
 h1 {
     color: aqua;
 }
 .container{
     width: 80%;
-    /* height: 100vh; */
     border-radius: 8px;
-    background-color: var(--mainColor);
     margin: auto;
+    min-height: 30vh;
+    background-color: var(--containerColor);
 }
 .social{
+    position: relative;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    min-height: 100px;
+    width: 100%;
+    min-height: 80vh;
 }
-.social li i{
-    align-content: center;
-
+.social li::before{
+    content: attr(data-text);
+    position: absolute;
+    font-size: 160px;
+    font-weight: 600;
+    opacity: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,calc(-50% + 120px));
+    pointer-events: none;
+    transition: 0.4s;
+}
+.social li:hover::before{
+    transform: translate(-50%,calc(-50% + 150px));
+    opacity: 0.2;
+}
+.social li a{
+    position: relative;
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    margin: 10px;
+    padding: 25px;
+    border-radius: 8px;
+    background-color: var(--blankColor);
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
+    transition:background 0.3s;
+    color: #000;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transform: translateZ(20px);
+}
+.social li a.tube:hover{
+    background-color :var(--tubeColor);
+    color: var(--blankColor) ;
+}
+.social li a.insta:hover{
+    color: var(--blankColor) ;
+    background-color:var(--instaColor);
+}
+.social li a.face:hover{
+    color: var(--blankColor) ;
+    background-color:var(--faceColor);
+}
+.social li a.twit:hover{
+    background-color:var(--twitColor);
+    color: var(--blankColor) ;
 }
